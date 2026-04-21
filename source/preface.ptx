@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<preface xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="preface">
+  <title>Preface</title>
+
+  <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
+
+  <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
+
+  <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
+
+  <!-- <index> <title>Index</title> <index-list/> </index> -->
+  
+  <p>These notes give a basic introduction to Lebesgue measure and Lebesgue integration, suitable for an advanced undergraduate Real Analysis course. They are meant to supplement Jay Cummings's <em>Real Analysis: A Long-Form Mathematics Textbook</em>, <m>2 + \ve</m> edition and are written in a similar style.</p>
+
+	<p>The notes assume that you've covered at least Chapters  1, 2, 3, 5, 6, and 8 in Jay's book. It is helpful, but not strictly necessary, to have covered Sections 9.1 and 9.2 to introduce the idea of sequences of functions. Series (Chapter 4) and Differentiation (Chapter 7) aren't necessary for these notes.</p>
+
+	<p>Chapter 10 introduces the idea of a measure and a <m>\sigma</m>-algebra, defines the Lebesgue outer measure, Lebesgue measure, and measurable functions. I focus on Lebesgue measure specifically; more general ideas of measure aren't addressed.</p>
+
+	<p>Chapter 11 defines the Lebesgue integral using the simple functions approach. Whenever possible I take a very similar approach to Chapter 8's development of Darboux integration, intentionally using parallel notation and making links between the ideas. Most of the focus is on integrating simple functions and bounded functions, with only one section addressing general Lebesgue integration and one involving integrating sequences of functions.</p>
+
+	<p>I have personally used these notes in our second semester senior Real Analysis elective. Our pacing puts Chapters 1--6 in the first semester, sometimes touching a bit on differentiation from Chapter 7. Then the second semester covers Chapters 7 and 8 in the first seven weeks of the semester, and uses these notes (Chapters 10 and 11) for the second half. These notes have almost exactly enough material to fill 7 weeks. I include a day of pathological examples every one or two weeks to illustrate some of the key ideas, which could be expanded or contracted as needed.</p>
+
+	<p>Please let me know if you use these notes, and if so, how well they worked for you. Feel free also to contact me with edits, errors, praise, and complaints (or not): <url href="mailto:clarkdav@gvsu.edu" visual="clarkdav@gvsu.edu">clarkdav@gvsu.edu</url>.</p>
+
+<p>--David Clark</p>
+
+<p>Grand Valley State University, Allendale, Michigan</p>
+
+<p>p.s. Thanks especially to my MTH 409 students from Winter 2025, who were my <m>\alpha</m>-testers and an incredibly good-natured bunch.</p>
+
+</preface>
+

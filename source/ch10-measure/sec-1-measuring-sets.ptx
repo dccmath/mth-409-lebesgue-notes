@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-1-measuring-sets" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Measuring Sets</title>
+
+  <p>Here's a reminder of Definition 8.22 with slightly different notation:</p>
+
+<definition>
+	<title>Interval length</title>
+	<p>The <term>length</term> of the interval <m>[a,b]</m> is equal to <m>b-a</m>, and is denoted <m>\len{[a,b]}</m>. This is also the length of <m>(a,b)</m>, <m>(a,b]</m>, and <m>[a,b)</m>. Intervals that involve <m>\pm \infty</m> are defined to have length <m>\infty</m>.</p>
+</definition>
+
+<p>This is a nice and simple way to measure the length of <em>one</em> interval. What about sets that aren't intervals? In this chapter, we'll see how to do exactly that.</p>
+
+<p>For example, suppose <m>I = (-1,1) \cup [2,5) \cup [7,8]</m>. We would like the length of <m>I</m> to be 6, since that's the sum of the lengths of the intervals that make it up. Note that <m>\ell</m>, as we've defined it, doesn't allow us to do this. That isn't too hard to fix, but it still needs to be fixed. On the other hand, what should we call the length of <m>\Q</m>? This doesn't contain <em>any</em> intervals but is also infinitely large. As we've seen before, the length (really <em>size</em>) of <m>\Q</m> is in fact zero, at least under one possible definition.</p>
+
+<p>The new idea we need is called a measure. A <term>measure</term> is a set function, that is, a function whose domain includes subsets of <m>\R</m>. Its codomain is the <term>extended real numbers</term>, that is, <m>\R \cup \{\pm \infty\}</m>. The extended real numbers let us say, as we want to, that the measure of some sets is <m>\infty</m>.</p>
+
+<p>Here are some nice properties that we would like any measure <m>\mesn</m> to have:</p>
+
+<ol>
+	<li> <m>\mes{A}</m> is defined for every subset <m>A \subseteq \R</m>. In other words, the domain of <m>\mesn</m> is <m>\mathcal{P}(\R)</m>, the power set of the real numbers.</li>
+	<li> For any interval <m>I</m>, <m>\mes{I} = \len{I}</m>, and <m>\mes{\emptyset} = 0</m> too.</li>
+	<li> <m>\mesn</m> is <term>countably additive</term>. That is, if <m>\{A_{n}\}</m> is a countable collection of disjoint sets, then <m>\mes{\cup A_{n}} = \sum \mes{A_{n}}</m>.</li>
+	<li> <m>\mesn</m> is <term>invariant under translation</term>. That is, if <m>A</m> is some set, <m>x \in \R</m>, and <m>A + x = \{a + x : a \in A\}</m>, then <m>\mes{A} = \mes{A+x}</m>.</li>
+</ol>
+
+<p>Go back and think about what each of these properties means and why it is important. Once you've done that, here's an explanation (don't continue until you've thought through each property!):</p>
+<ol>
+	<li> We want to be able to measure every possible set.</li>
+	<li> A measure should give the result we expect for intervals: the interval's length.</li>
+	<li> If a set is made up of a bunch of disjoint parts, then we can measure those parts separately and add them up to get the set's entire measure.</li>
+	<li> This one requires some more explanation. Think about the interval <m>A = [0,1]</m>. Then <m>A + 3 = \{a + 3 : a \in A\} = [3,4]</m>. You can imagine this as sliding (aka translating) <m>A</m> by 3 units to the right on a number line. This item says that translating <m>A</m> shouldn't change the measure of <m>A</m>, because we haven't changed anything important about how the numbers in <m>A</m> are arranged.</li>
+</ol>
+
+<!-- This process of \emph{translating} a set produces a set called a ``coset''. For example, $A + 3$ is called a coset of $A$. Cosets are surprisingly common. They are fundamental objects in modern algebra and other fields of study. -->
+
+<p>Unfortunately, this is a fool's errand: <em>no</em> set function can satisfy all four of these properties.
+
+<aside>
+	<title>Wait, what?</title>
+	<p>Amazingly, it's not even known if there is a set function that satisfies just properties #1, #2, and #3 at the same time.</p>
+</aside>
+
+The best solution is to give ourselves some wiggle room on #1: We allow a measure to be defined only on certain subsets of the real numbers, but not all of them. This unfortunately means that there will always be some nonmeasurable sets. We would nonetheless like to be able to measure as many sets as possible.</p>
+
+<p>We do require a little bit of structure, however. Here's an important definition:</p>
+
+<definition>
+    <title><m>\sigma</m>-algebra</title>
+    <p>A <term><m>\sigma</m>-algebra</term> (pronounced "sigma-algebra") is a collection <m>\mathcal{M}</m> of subsets of <m>\R</m> that satisfies the following properties:</p>
+    
+    <ol>
+    	<li> Closure under complements: If <m>A \in \mathcal{M}</m> then <m>{A^{c}} \in \mathcal{M}</m>.</li>
+    	<li> Closure under countable unions: If <m>\{A_{n}\}</m> is a countable collection of subsets in <m>\mathcal{M}</m>, then <m>\cup A_{n} \in \mathcal{M}</m>.</li>
+    	<li> Closure under countable intersections: If <m>\{A_{n}\}</m> is a countable collection of subsets in <m>\mathcal{M}</m>, then <m>\cap A_{n} \in \mathcal{M}</m>.</li>
+    </ol>
+</definition>
+
+<p>In the above definitions, "countable" also includes "finite". For example, property #2 implies that if <m>A</m> and <m>B</m> are subsets in <m>\mathcal{M}</m>, then <m>A \cup B \in \mathcal{M}</m> too.</p>
+
+<p>This definition is pretty abstract, but the good news is that you're already familiar with at least one <m>\sigma</m>-algebra:</p>
+
+<example>
+<title><m>\mathcal{P}(\R)</m> is a <m>\sigma</m>-algebra</title>
+<p>The set of all subsets of <m>\R</m>, that is <m>\mathcal{P}(\R)</m>, is a <m>\sigma</m>-algebra. For any given collection of sets of real numbers, their unions, intersections, and complements are also a set of real numbers (possibly an empty one).</p>
+</example>
+
+<p>Here's a slightly more interesting example:</p>
+
+<example>
+	<title>A finite <m>\sigma</m>-algebra</title>
+	<p>Let <m>\mathcal{M} = \{\emptyset, [0,1], (-\infty,0) \cup (1,\infty), \R\}</m>. Then <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra. You should double-check each property.</p>
+</example>
+
+
+<p>The way to think about a <m>\sigma</m>-algebra is that it's a bunch of sets in which you can take complements, unions, and intersections without having to worry about somehow ending up with a set that's not allowed. There is one limit: You can't take too "big" of an intersection or union -- only countably many sets at a time.</p>
+
+<p>A <m>\sigma</m>-algebra is exactly what we need to make measure functions work. Unfortunately, it's too much to ask that we can measure all of <m>\mathcal{P}(\R)</m>, but a slightly smaller -- but still ginormous -- collection of sets <em>will</em> be measurable. That set will be a <m>\sigma</m>-algebra as well. The rest of this chapter is all about how we can do this. We're finally ready to carefully define a measure:</p>
+
+<definition xml:id="defn-measure">
+	<p>Let <m>\mathcal{M}</m> be a <m>\sigma</m>-algebra. A function <m>\mesn : \mathcal{M} \to \R \cup \{\pm \infty\}</m> is called a \textbf{measure} if it has all of these properties:</p>
+	<ol>
+		<li><term>Non-negativity:</term> <m>\mes{A} \geq 0</m> for all <m>A \in \mathcal{M}</m>.</li>
+		<li><m>\mes{\emptyset} = 0</m>.</li>
+		<li><term>Countable additivity:</term> For any countable collection <m>\{A_{n}\}</m> of disjoint sets in <m>\mathcal{M}</m>, <m>\mes{\cup A_{n}} = \sum \mes{A_{n}}</m>.</li>
+	</ol>
+</definition>
+
+<p>Some of our "nice properties" are missing from this definition. The definition of measure is <em>very</em> general and applies in situations where intervals don't even make sense. In the following sections, we will develop an example of a measure that <em>also</em> satisfies <m>\mes{I} = \ell(I)</m> for each interval and is invariant under translation.</p>
+
+</section>
