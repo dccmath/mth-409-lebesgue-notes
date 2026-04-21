@@ -5,15 +5,17 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Lebesgue measure and integration</title>
+    <subtitle>Notes for MTH 409: Real Analysis II</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    
+    <xi:include href="./ch-10-lebesgue-measure.ptx" />
 
+    <xi:include href="./ch-11-lebesgue-integration.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

@@ -1,4 +1,5 @@
-<string>:35:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got colophon
-<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element docinfo, got pretext
-<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element pretext there
-<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element webwork, got pretext
+<string>:4:0:ERROR:RELAXNGV:RELAXNG_ERR_NOTELEM: Expecting an element got text
+<string>:4:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element title failed to validate content
+<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element section there
+<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got section
+<string>:3:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element proof, got section
