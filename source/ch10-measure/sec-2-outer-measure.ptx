@@ -3,6 +3,103 @@
 <section xml:id="sec-2-outer-measure" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Outer measure</title>
 
-<p>•</p>
+<p>Remember that our goal is to find a more general way to measure sets of real numbers. In this section, we'll see how we can take the idea of measuring intervals and use it to begin measuring some other sets.</p>
+
+<p>First, here's a variation on the idea of an open cover, which we first saw in Section 5.3:</p>
+
+<definition xml:id="def-countable-cover">
+	<title>Countable open cover</title>
+	<p>A <term>countable open cover</term> of a set <m>A</m> is a countable collection of open intervals <m>\{I_{n}\}</m> where <me>A \subseteq \displaystyle\bigcup_{n} I_{n}.</me></p>
+</definition>
+
+<p>The only difference between a <q>countable open cover</q> and a plain-old <q>open cover</q> is that a countable open cover can only have countably many sets in it.
+
+<aside><title>A detail about open sets</title>
+<p>Often the definition of <q>open cover</q> says that the <m>I_{n}</m>'s must be open <em>sets</em>. But by Theorem 5.5, every open set is a countable union of open intervals. That, plus the fact that the union of countable sets is countable, lets us assume that each <m>I_{n}</m> in a countable open cover is just one open interval. So with a countable open cover, we're looking at sets of open intervals that completely cover a set <m>A</m>, as long as there aren't <em>too many</em> such sets.</p>
+</aside>
+
+A regular open cover could have uncountably many sets.</p>
+
+
+<example>
+	<title>Four of open covers of <m>[0,1]</m></title>
+	<p>Here are four examples of open covers of <m>[0,1]</m>:</p>
+	<ol>
+		<li><m>C = \{ (x - 0.1, x + 0.1 ) : x \in [0,1] \}</m></li>
+		<li><m>D = \{ (x - 0.1, x + 0.1) : x \in [0,1] \cap \Q \}</m></li>
+		<li><m>E = \{ (-0.1, 1.1) \}</m></li>
+		<li><m>F = \{ ( \frac{1}{n}, 1 - \frac{1}{n} ) : n \in \N\}</m></li>
+	</ol>
+	<p>All of these are open covers of <m>[0,1]</m>. However, only <m>D</m>, <m>E</m>, and <m>F</m> are countable open covers, since <m>|D| = |\Q| = |\N|</m>, <m>|E| = 1</m>, and <m>|F| = |\N|</m>. On the other hand, <m>|C| = |\R|</m> so <m>C</m> is uncountably large and therefore not a countable open cover.</p>
+</example>
+
+
+<p>We use this idea of being <q>covered by open intervals</q> to define our first attempt at a measure:</p>
+
+<definition xml:id="def-outer-measure">
+	<title>Outer measure</title>
+	<p>The <term>outer measure</term> of a set <m>A</m>, denoted <m>\meso{A}</m>, is defined as:
+	<md>\meso{A} = \inf_{A \subseteq \cup \{I_{n}\}} \sum \len{I_{n}},</md>
+	where the infimum runs over all countable open covers <m>\{I_n\}</m> of <m>A</m>. It is possible that the infimum is infinitely large, that is, that <m>\meso{A} = \infty</m>.
+	</p>
+</definition>
+
+<p>There's a lot packed in to this definition.
+
+<aside><title>We're not telling you the whole story</title>
+<p>The function <m>\meson</m> is more properly called the <term>Lebesgue outer measure</term>. There are other outer measures, but this is the only one we'll study. Plus Lebesgue will get plenty of name-checks later on.</p>
+</aside>
+
+The idea is that, if we can cover a set with open intervals, then the sum of the lengths of those intervals is an overestimate for the set's true measure (that's the <q>outer</q> part). Note that the intervals need not be disjoint. But there are lots of ways to cover a set with open intervals, and some of them waste a lot of space while others waste very little. If we take the infimum across all possible ways to cover the set with open intervals, then we hopefully get close to the true measure of the set. Let's look at some examples.</p>
+
+<example xml:id="ex-okzero">
+	<title>Outer measure agrees with measure zero</title>
+	<p>The definition of <q>outer measure</q> agrees with our earlier definition of <q>measure zero</q> (Definition 8.23) in the case <m>\meso{A} = 0</m>.</p>
+	
+	<p>To see this, first suppose a set <m>A</m> has measure zero. Then for any <m>\ve > 0</m> there exists a countable open cover <m>\{ J_n \}</m> of <m>A</m> with <m>\sum \ell(J_{n}) \lt \ve</m>. Thus <md>\displaystyle\inf_{A \subseteq \cup \{I_{n}\}} \sum \ell(I_{n}) \leq 0</md>, because the infimum across <em>all</em> countable open covers includes this specific open cover <m>\{ J_n \}</m>. Because the lengths of intervals are always nonnegative, this infimum actually equals zero, which means that <m>\meso{A} = 0</m>.</p>
+	
+	<p>Conversely, if <m>\meso{A} = 0</m> then by the Suprema Analytically theorem (1.24), for any <m>\ve > 0</m> there exists a countable open cover such that <m>\sum \ell(I_{n}) \lt 0 + \ve</m>, which is exactly what the definition of <q>measure zero</q> requires.</p>
+</example>
+
+<example xml:id="ex-interval-01">
+	<title>The outer measure of <m>[0,1]</m></title>
+	<p>Let <m>A = [0,1]</m>. We really <em>really</em> want <m>\meso{A} = 1</m> or else this outer measure idea won't make any sense at all. So let's show that it works as expected. Buckle in.</p>
+	
+	<p>First, let <m>\ve > 0</m> and consider the interval <m>(0-\ve, 1 + \ve)</m>. Then <m>\{ (0-\ve, 1 + \ve) \}</m> is a countable open cover of <m>[0,1]</m>. We also know that <m>\len{0-\ve, 1 + \ve} = 1+\ve - (0-\ve) = 1 + 2\ve</m>. This means that <m>\meso{A} \leq 1 + 2\ve</m> for all <m>\ve > 0</m>, or in other words, <m>\meso{A} \leq 1</m>. So far, so good.</p>
+	
+	<p>Next if we can show that <m>\meso{A} \geq 1</m>, then we'll have <m>\meso{A} = 1</m>. Start by considering any countable open cover of <m>[0,1]</m>. Because <m>[0,1]</m> is closed and bounded, by the Heine-Borel Theorem, it is compact (You didn't see <em>that</em> one coming, did you?). By definition of <q>compact,</q> every open cover of <m>[0,1]</m> has a finite subcover <m>\mathcal{I} = \{I_{1}, I_{2}, \ldots, I_{n}\}</m>. That is, <m>\mathcal{I}</m> is a <em>finite</em> list of open intervals that cover <m>[0,1]</m>.</p>
+	
+	<p>Next, we'll turn this <em>finite</em> cover of <m>[0,1]</m> into a <em>minimal</em> cover, by selecting only a bare minimum of intervals from <m>\mathcal{I}</m>. Because <m>\mathcal{I}</m> covers <m>[0,1]</m>, there must be some interval <m>(a_{1}, b_{1}) \in \mathcal{I}</m> that covers 0, that is, <m>0 \in (a_{1}, b_{1})</m>. Perhaps <m>(a_{1},b_{1})</m> covers all of <m>[0,1]</m>, in which case we stop here. But if it doesn't, that means <m>b_{1} \in (0,1]</m>. Then we can find another interval <m>(a_{2},b_{2}) \in \mathcal{I}</m> so that <m>b_{1} \in (a_{2}, b_{2})</m>. Again, perhaps <m>b_{2} > 1</m> in which case we've covered all of <m>[0,1]</m>. If so, we stop. If not, we continue this process, finding a sequence of intervals from <m>\mathcal{I}</m>:</p>
+	<md>(a_{1}, b_{1}), (a_{2}, b_{2}), \ldots, (a_{k},b_{k})</md> <!-- Must this be in a paragraph? -->
+	<p>so that each <m>b_{i-1} \in (a_{i}, b_{i})</m> and together the intervals completely cover <m>[0,1]</m>, that is, <m>[0,1] \subseteq \cup_{i=1}^{k} (a_{i}, b_{i})</m>. Notice that we can do this because <m>\mathcal{I}</m> covers <m>[0,1]</m>, and this process must end with a finite number of intervals because <m>\mathcal{I}</m> is finite by assumption.</p>
+	
+	<figure xml:id="fig-overlapping-intervals">
+		<image source="images/outer-overlapping-intervals.png" width="90%" />
+		<shortdescription>An illustration of the overlapping intervals described in the text.</shortdescription>
+		<caption>A minimal cover of <m>[0,1]</m> constructed step by step.</caption>
+	</figure>
+	
+	<p>Now let's calculate the total length of these intervals:</p>
+	
+	<md>
+		<mrow>\sum_{i=1}^{k} \len{a_{i},b_{i}} \amp= (b_{1} - a_{1}) + (b_{2} - a_{2}) + \cdots + (b_{k-1} - a_{k-1}) + (b_{k}-a_{k})</mrow>
+		<mrow>\amp= (b_{k} - a_{k}) + (b_{k-1} - a_{k-1}) + \cdots + (b_{2} - a_{2}) + (b_{1}-a_{1})</mrow>
+		<mrow number="yes" xml:id="eq-outer-telescope">\amp= b_{k} - (a_{k} - b_{k-1}) - (a_{k-1} - b_{k-2}) - \cdots - (a_{i} - b_{i-1}) - \cdots - (a_{2} - b_{1}) - a_{1}.</mrow>
+	</md>
+	<p>The second line just writes the first line in reverse order. The third line is a clever trick: We regroup the <m>a</m>'s and <m>b</m>'s, shifting each set of parentheses one term to the right and attending really carefully to negative signs.</p> <!-- Be sure you can see why the subtraction and negatives work out correctly.-->
+	
+	<p>Remember that we chose these intervals to overlap, which we wrote as: <m>b_{i-1} \in (a_{i}, b_{i})</m>. Thus <m>a_{i} \lt b_{i-1}</m>, and so each regrouped term in <xref ref="eq-outer-telescope" /> is negative: <m>a_{i} - b_{i-1} \lt 0</m>. So each term subtracts a negative amount, also known as adding a positive amount: <m>-(a_{i}-b_{i-1}) > 0</m>. That lets us make a big estimate:</p>
+	<md>
+		b_{k} - (a_{k} - b_{k-1}) - (a_{k-1} - b_{k-2}) - \cdots - (a_{i} - b_{i-1}) - \cdots - (a_{2} - b_{1}) - a_{1} > b_{k} - a_{1}.
+	</md>
+	
+	<p>But we also know that <m>b_{k} > 1</m> and <m>a_{1} \lt 0</m>. Putting this all together,</p>
+	<md>\sum_{i=1}^{k} \len{a_{i},b_{i}} > b_{k} - a_{1} > 1 - 0 = 1.</md>
+	
+	<p>So the total length of <em>this particular subcover <m>\mathcal{I}</m></em> is greater than 1. That means that the total length of the original cover is also greater than 1. Finally, remember that <m>\meson</m> is an infimum calculated across <em>all</em> possible countable open covers <m>\mathcal{I}</m>. Since each set in that infimum leads us to a total length <em>greater than</em> 1, the infimum itself must be <em>greater than or equal to</em> 1. (We proved this somewhere back in Chapters 1--7, I'm sure of it.) In other words, <m>\meso{[0,1]} \geq 1</m>.</p>
+	
+	<p>Putting together the two inequalities, we must have that <m>\meso{[0,1]} = 1</m>.</p>
+</example>
+
 
 </section>

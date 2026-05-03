@@ -10,5 +10,7 @@
   <!-- include sections -->
   <xi:include href="ch10-measure/sec-1-measuring-sets.ptx" />
   <xi:include href="ch10-measure/sec-2-outer-measure.ptx" />
+  
+  <xi:include href="ch10-measure/sec-exercises.ptx" />
 
 </chapter>

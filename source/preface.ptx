@@ -11,7 +11,7 @@
 
   <!-- <index> <title>Index</title> <index-list/> </index> -->
   
-  <p>These notes give a basic introduction to Lebesgue measure and Lebesgue integration, suitable for an advanced undergraduate Real Analysis course. They are meant to supplement Jay Cummings's <em>Real Analysis: A Long-Form Mathematics Textbook</em>, <m>2 + \ve</m> edition and are written in a similar style.</p>
+  <p>These notes give a basic introduction to Lebesgue measure and Lebesgue integration, suitable for an advanced undergraduate Real Analysis course. They are meant to supplement Jay Cummings's <pubtitle>Real Analysis: A Long-Form Mathematics Textbook</pubtitle>, <m>2 + \ve</m> edition and are written in a similar style.</p>
 
 	<p>The notes assume that you've covered at least Chapters  1, 2, 3, 5, 6, and 8 in Jay's book. It is helpful, but not strictly necessary, to have covered Sections 9.1 and 9.2 to introduce the idea of sequences of functions. Series (Chapter 4) and Differentiation (Chapter 7) aren't necessary for these notes.</p>
 

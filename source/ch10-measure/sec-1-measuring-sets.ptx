@@ -48,7 +48,7 @@ The best solution is to give ourselves some wiggle room on #1: We allow a measur
 
 <definition>
     <title><m>\sigma</m>-algebra</title>
-    <p>A <term><m>\sigma</m>-algebra</term> (pronounced "sigma-algebra") is a collection <m>\mathcal{M}</m> of subsets of <m>\R</m> that satisfies the following properties:</p>
+    <p>A <term><m>\sigma</m>-algebra</term> (pronounced <q>sigma-algebra</q>) is a collection <m>\mathcal{M}</m> of subsets of <m>\R</m> that satisfies the following properties:</p>
     
     <ol>
     	<li> Closure under complements: If <m>A \in \mathcal{M}</m> then <m>{A^{c}} \in \mathcal{M}</m>.</li>
@@ -57,7 +57,7 @@ The best solution is to give ourselves some wiggle room on #1: We allow a measur
     </ol>
 </definition>
 
-<p>In the above definitions, "countable" also includes "finite". For example, property #2 implies that if <m>A</m> and <m>B</m> are subsets in <m>\mathcal{M}</m>, then <m>A \cup B \in \mathcal{M}</m> too.</p>
+<p>In the above definitions, <q>countable</q> also includes <q>finite</q>. For example, property #2 implies that if <m>A</m> and <m>B</m> are subsets in <m>\mathcal{M}</m>, then <m>A \cup B \in \mathcal{M}</m> too.</p>
 
 <p>This definition is pretty abstract, but the good news is that you're already familiar with at least one <m>\sigma</m>-algebra:</p>
 
@@ -74,12 +74,13 @@ The best solution is to give ourselves some wiggle room on #1: We allow a measur
 </example>
 
 
-<p>The way to think about a <m>\sigma</m>-algebra is that it's a bunch of sets in which you can take complements, unions, and intersections without having to worry about somehow ending up with a set that's not allowed. There is one limit: You can't take too "big" of an intersection or union -- only countably many sets at a time.</p>
+<p>The way to think about a <m>\sigma</m>-algebra is that it's a bunch of sets in which you can take complements, unions, and intersections without having to worry about somehow ending up with a set that's not allowed. There is one limit: You can't take too <q>big</q> of an intersection or union -- only countably many sets at a time.</p>
 
 <p>A <m>\sigma</m>-algebra is exactly what we need to make measure functions work. Unfortunately, it's too much to ask that we can measure all of <m>\mathcal{P}(\R)</m>, but a slightly smaller -- but still ginormous -- collection of sets <em>will</em> be measurable. That set will be a <m>\sigma</m>-algebra as well. The rest of this chapter is all about how we can do this. We're finally ready to carefully define a measure:</p>
 
 <definition xml:id="defn-measure">
-	<p>Let <m>\mathcal{M}</m> be a <m>\sigma</m>-algebra. A function <m>\mesn : \mathcal{M} \to \R \cup \{\pm \infty\}</m> is called a \textbf{measure} if it has all of these properties:</p>
+	<title>Measure function</title>
+	<p>Let <m>\mathcal{M}</m> be a <m>\sigma</m>-algebra. A function <m>\mesn : \mathcal{M} \to \R \cup \{\pm \infty\}</m> is called a <term>measure</term> if it has all of these properties:</p>
 	<ol>
 		<li><term>Non-negativity:</term> <m>\mes{A} \geq 0</m> for all <m>A \in \mathcal{M}</m>.</li>
 		<li><m>\mes{\emptyset} = 0</m>.</li>
@@ -87,6 +88,6 @@ The best solution is to give ourselves some wiggle room on #1: We allow a measur
 	</ol>
 </definition>
 
-<p>Some of our "nice properties" are missing from this definition. The definition of measure is <em>very</em> general and applies in situations where intervals don't even make sense. In the following sections, we will develop an example of a measure that <em>also</em> satisfies <m>\mes{I} = \ell(I)</m> for each interval and is invariant under translation.</p>
+<p>Some of our <q>nice properties</q> are missing from this definition. The definition of measure is <em>very</em> general and applies in situations where intervals don't even make sense. In the following sections, we will develop an example of a measure that <em>also</em> satisfies <m>\mes{I} = \ell(I)</m> for each interval and is invariant under translation.</p>
 
 </section>
