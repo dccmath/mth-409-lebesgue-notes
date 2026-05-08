@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises xml:id="sec-ch10-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+<exercisegroup>
+	<title>Interval length</title>
+	<introduction>
+		<p>Let <m>\mathcal{L}</m> be the set of all intervals (of all types -- open, closed, half, etc.). Consider <m>\ell : \mathcal{L} \to \R \cup \{\pm \infty\}</m> defined by <m>\ell(I) = b-a,</m> for an interval <m>I = (a,b)</m> or any of its variants. Note that we define <m>\ell(\emptyset) = 0</m>.</p>
+	</introduction>
+	<exercise>
+		<p>Show that <m>\ell</m> is non-negative.</p>
+	</exercise>
+	
+	<exercise>
+		<p>Show that <m>\ell</m> is countably additive (you'll need induction).</p>
+	</exercise>
+	
+	<exercise>
+		<p>Show that <m>\ell</m> is invariant under translation.</p>
+	</exercise>
+	
+	<conclusion>
+		<p>Note that <m>\mathcal{L}</m> is <em>not</em> a <m>\sigma</m>-algebra, so in this problem you are showing that <m>\ell</m> satisfies the right kind of properties for <m>\ell</m> to be a measure with translation invariance, but sadly it doesn't quite fit the full definition.</p>
+	</conclusion>
+</exercisegroup>
+
+<exercise>
+	<p>Prove Theorem ...</p>
+</exercise>
+
+</exercises>
